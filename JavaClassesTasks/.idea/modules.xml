@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/EighthTask/EighthTask.iml" filepath="$PROJECT_DIR$/EighthTask/EighthTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FirstTask/FirstTask.iml" filepath="$PROJECT_DIR$/FirstTask/FirstTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FivthTask/FivthTask.iml" filepath="$PROJECT_DIR$/FivthTask/FivthTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FourthTask/FourthTask.iml" filepath="$PROJECT_DIR$/FourthTask/FourthTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaClassesTasks.iml" filepath="$PROJECT_DIR$/JavaClassesTasks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NinthTask/NinthTask.iml" filepath="$PROJECT_DIR$/NinthTask/NinthTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SecondTask/SecondTask.iml" filepath="$PROJECT_DIR$/SecondTask/SecondTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SeventhTask/SeventhTask.iml" filepath="$PROJECT_DIR$/SeventhTask/SeventhTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SixthTask/SixthTask.iml" filepath="$PROJECT_DIR$/SixthTask/SixthTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TenthTask/TenthTask.iml" filepath="$PROJECT_DIR$/TenthTask/TenthTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ThirdTask/ThirdTask.iml" filepath="$PROJECT_DIR$/ThirdTask/ThirdTask.iml" />
+    </modules>
+  </component>
+</project>
