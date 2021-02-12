@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args){
-
         Student student1 = new Student(1, "Иванова","Иван","Иванович", new Date(2000,11,10),"aaaa","123456789" );
         Student student2 = new Student(2, "Петров","Петр","Петрович", new Date(2000,11,10),"bbbb","123456789" );
         Student student3 = new Student(3, "Семенов","Семен","Семенович", new Date(2000,11,10),"cccc","123456789");
@@ -28,87 +27,84 @@ public class Main {
         Student student19 = new Student(19, "Иванова","Иван","Иванович", new Date(2000,11,10),"pppp","123456789" );
         Student student20 = new Student(20, "Иванова","Иван","Иванович", new Date(2000,11,10),"qqqq","123456789" );
 
-        List<Student> list1 = new ArrayList<Student>();
-        list1.add(student1);
-        list1.add(student2);
-        list1.add(student3);
-        list1.add(student4);
-        list1.add(student5);
+        List<Student> firstList = new ArrayList<Student>();
+        firstList.add(student1);
+        firstList.add(student2);
+        firstList.add(student3);
+        firstList.add(student4);
+        firstList.add(student5);
 
-        List<Student> list2 = new ArrayList<Student>();
-        list2.add(student6);
-        list2.add(student7);
-        list2.add(student8);
-        list2.add(student9);
-        list2.add(student10);
+        List<Student> secondList = new ArrayList<Student>();
+        secondList.add(student6);
+        secondList.add(student7);
+        secondList.add(student8);
+        secondList.add(student9);
+        secondList.add(student10);
 
-        List<Student> list3 = new ArrayList<Student>();
-        list3.add(student11);
-        list3.add(student12);
-        list3.add(student13);
-        list3.add(student14);
-        list3.add(student15);
+        List<Student> thirdList = new ArrayList<Student>();
+        thirdList.add(student11);
+        thirdList.add(student12);
+        thirdList.add(student13);
+        thirdList.add(student14);
+        thirdList.add(student15);
 
-        List<Student> list4 = new ArrayList<Student>();
-        list4.add(student16);
-        list4.add(student17);
-        list4.add(student18);
-        list4.add(student19);
-        list4.add(student20);
+        List<Student> fourthList = new ArrayList<Student>();
+        fourthList.add(student16);
+        fourthList.add(student17);
+        fourthList.add(student18);
+        fourthList.add(student19);
+        fourthList.add(student20);
 
+        Group group1 = new Group(1,"AAAA", firstList);
+        Group group2 = new Group(2,"BBBB",secondList);
+        Group group3 = new Group(3,"CCCC",thirdList);
+        Group group4 = new Group(4,"DDDD",fourthList);
 
-        Group group1 = new Group(1,"AAAA", list1);
-        Group group2 = new Group(2,"BBBB",list2);
-        Group group3 = new Group(3,"CCCC",list3);
-        Group group4 = new Group(4,"DDDD",list4);
+        List<Group> firstGroupList = new ArrayList<Group>();
+        firstGroupList.add(group1);
+        firstGroupList.add(group2);
 
-        List<Group> groupList1 = new ArrayList<Group>();
-        groupList1.add(group1);
-        groupList1.add(group2);
+        List<Group>  secondGroupList = new ArrayList<Group>();
+        secondGroupList.add(group3);
+        secondGroupList.add(group4);
 
-        List<Group> groupList2 = new ArrayList<Group>();
-        groupList2.add(group3);
-        groupList2.add(group4);
+        Grade grade1 = new Grade(1,firstGroupList);
+        Grade grade2 = new Grade(2,secondGroupList);
 
-        Grade grade1 = new Grade(1,groupList1);
-        Grade grade2 = new Grade(2,groupList2);
+        List<Grade> firstGradeList = new ArrayList<Grade>();
+        firstGradeList.add(grade1);
+        firstGradeList.add(grade2);
 
-        List<Grade> gradeList1 = new ArrayList<Grade>();
-        gradeList1.add(grade1);
-        gradeList1.add(grade2);
+        Faculty faculty = new Faculty(1,"IT",firstGradeList);
+    }
 
-        Faculty faculty = new Faculty(1,"IT",gradeList1);
-
+    public static void getListOfStudentsByFaculty(Faculty faculty){
         System.out.println("Список студентов заданного факультета: ");
-        List<Student> studentList = faculty.SaveAllStudents();
+        List<Student> studentList = faculty.getAllStudents();
         for (Student student:studentList)
-        System.out.println(student.toString());
-        System.out.println();
-        System.out.println();
-
-        System.out.println("Cписки студентов для каждого факультета и курса: ");
-        System.out.println(faculty.toString());
-        System.out.println();
-        System.out.println();
-
-        System.out.println("Список студентов, родившихся после заданного года: ");
-        Scanner scanner = new Scanner(System.in);
-        int s= scanner.nextInt();
-        for(int i=0;i<studentList.size();i++){
-            if(studentList.get(i).getDateOfBirth().getYear()>s){
-                System.out.println(studentList.get(i));
-            }
-        }
-        System.out.println();
-        System.out.println();
-
-
-        System.out.println("Список учебной группы.: ");
-        List<Group> groupList = faculty.SaveAllGroups();
-        for (Group group:groupList)
-            System.out.println(group.toString());
+            System.out.println(student.toString());
 
     }
 
+    public static void getListOfStudentsByFacultiesAndGrades(Faculty faculty){
+        System.out.println("Cписки студентов для каждого факультета и курса: ");
+        System.out.println(faculty.toString());
+    }
 
+    public static void getListOfStudentsByDateOfBirth(Faculty faculty, int year){
+        System.out.println("Список студентов, родившихся после заданного года: ");
+        List<Student> studentList = faculty.getAllStudents();
+        for(int i=0;i<studentList.size();i++){
+            if(studentList.get(i).getDateOfBirth().getYear()>year){
+                System.out.println(studentList.get(i));
+            }
+        }
+    }
+
+    public static void getListOfGroupsbyFaculty(Faculty faculty){
+        System.out.println("Список учебной группы.: ");
+        List<Group> groupList = faculty.getAllGroups();
+        for (Group group:groupList)
+            System.out.println(group.toString());
+    }
 }

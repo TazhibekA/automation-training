@@ -2,7 +2,6 @@ package FifthTask;
 
 public class Track implements Comparable<Track>{
     private String name;
-    //duration in seconds
     private double duration;
     private MusicStyle style;
 

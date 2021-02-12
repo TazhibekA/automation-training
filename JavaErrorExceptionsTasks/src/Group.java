@@ -35,4 +35,24 @@ public class Group {
     public void setStudents(List<Student> students) {
         this.students = students;
     }
+
+    public Double getAverageMark(){
+        Double num = 0.;
+        int size = students.size();
+
+        for (Student student : students){
+           num += student.getAverageMark();
+        }
+        return num / size;
+    }
+
+    public Double getAverageMarkBySubject(String subjectName){
+        Double num = 0.;
+        int size = students.size();
+
+        for (Student student : students){
+            num += student.getAverageMarkBySubject(subjectName);
+        }
+        return num / size;
+    }
 }

@@ -1,9 +1,4 @@
 package SecondTask;
-
-
-
-
-
 import java.util.List;
 
 public class Gift {
@@ -11,38 +6,30 @@ public class Gift {
     private List<Candy> candies;
 
     public Gift(List<Candy> candies) {
-        this.weight =  TotalPrice(candies);
+        this.weight =  getTotalPrice(candies);
         this.candies = candies;
     }
 
-    private double TotalPrice(List<Candy> bouquet){
+    private double getTotalPrice(List<Candy> bouquet){
         double sum = 0;
         for(Candy flower: bouquet){
             sum += flower.getWeight();
         }
         return sum;
     }
-    private boolean HasCandyWithLength(int sugar){
-        for(Candy candy:candies){
-            if(candy.getSugar()==sugar) {
-                return true;
-            }
-        }
-        return false;
-    }
 
-    public Candy FindCandy(int sugar){
-        if(this.HasCandyWithLength(sugar)){
+    public Candy getCandyBySugar(int sugar){
             for(Candy candy:candies){
                 if(candy.getSugar()==sugar) {
                     return candy;
                 }
             }
-        }
         return null;
     }
 
-
+    public boolean isCandyWithSugarPresent(int sugar){
+        return getCandyBySugar(sugar) != null;
+    }
 
     public double getWeight() {
         return weight;

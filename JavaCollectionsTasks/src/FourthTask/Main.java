@@ -1,7 +1,5 @@
 package FourthTask;
 
-
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -16,11 +14,10 @@ public class Main {
 
         }};
 
-
         Salad salad = new Salad(vegetableList);
         Collections.sort(salad.getVegetables());
         System.out.println(salad.toString());
-        System.out.println(salad.FindVegetable(12));
+        System.out.println(salad.getVegetableByCalories(12));
 
     }
 }

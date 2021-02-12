@@ -36,29 +36,24 @@ public class University {
         this.faculties = faculties;
     }
 
-    public Double AverageMarkOfSubject(String subjectName,String facultyName,String groupName){
-        Double averageMark = 0.;
-        int size = 0;
-        for(Faculty faculty : faculties) {
-            if(faculty.getName().equals(facultyName)) {
-                for (Group group : faculty.getGroups()) {
-                    if (group.getName().equals(groupName)) {
-                        for (Student student : group.getStudents()) {
-                            for (SubjectMarks subject : student.getSubjectMarks()) {
-                                if (subject.getSubjectName().equals(subjectName)) {
-                                    size += subject.getMarks().size();
-                                    for (Double mark : subject.getMarks()) {
-                                        averageMark += mark;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+    public Double getAverageMark()   {
+        Double num = 0.;
+        int size = faculties.size();
 
+        for (Faculty faculty : faculties){
+            num += faculty.getAverageMark();
         }
-        return averageMark/size;
+        return num / size;
+    }
+
+    public Double getAverageMarkBySubject(String subjectName)  {
+        Double num = 0.;
+        int size = faculties.size();
+
+        for (Faculty faculty : faculties){
+            num += faculty.getAverageMarkBySubject(subjectName);
+        }
+        return num / size;
     }
 
 

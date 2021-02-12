@@ -77,11 +77,9 @@ public class Student {
         this.phone = phone;
     }
 
-
-
     @Override
     public String toString() {
-        return "Student " +
+        return "\nStudent " +
                 "id=" + id +
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +

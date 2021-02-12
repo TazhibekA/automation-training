@@ -47,17 +47,6 @@ public class Group {
 
     @Override
     public String toString() {
-        return "\nGroup ID: " + id + "\nGroup Name: " + groupName + "\nGroup students:\n" + students;
+        return "Group ID: " + id + "\nGroup Name: " + groupName + "\nGroup students:" + students+'\n';
     }
-
-    public List<Student> SaveAllStudents(){
-        List<Student> students = new ArrayList<Student>();
-        for(int i = 0;i < students.size();i++){
-                students.add(students.get(i));
-        }
-        return students;
-    }
-
-
-
 }

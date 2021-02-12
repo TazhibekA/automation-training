@@ -1,7 +1,5 @@
 package SecondTask;
 
-
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,6 +16,6 @@ public class Main {
         Gift gift = new Gift(candiesList);
         Collections.sort(gift.getCandies());
         System.out.println(gift.toString());
-        System.out.println(gift.FindCandy(15));
+        System.out.println(gift.getCandyBySugar(15));
     }
 }

@@ -4,23 +4,14 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.ArrayList;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-
-
-
-
 public class FourthTask {
-
     WebDriver pastebin;
     WebDriverWait wait;
-
 
     @Before
     public  void SetUp() throws InterruptedException {
@@ -37,12 +28,9 @@ public class FourthTask {
         System.out.println(pastebin.getCurrentUrl());
         pastebin.findElement(By.linkText("Google Cloud Platform Pricing Calculator")).click();
 
-
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//*[@id=\"cloud-site\"]/devsite-iframe/iframe")));
 
-        pastebin.switchTo().defaultContent();
-        pastebin.switchTo().frame(0);
-        pastebin.switchTo().frame("myFrame");
+        switchToFrameByName(pastebin,"myFrame");
 
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("input_63")));
 
@@ -62,11 +50,8 @@ public class FourthTask {
         wait.until(ExpectedConditions.elementToBeClickable(commited));
         commited.click();
 
-        Thread.sleep(2000);
         actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
-        Thread.sleep(2000);
 
-        Thread.sleep(5000);
         WebElement btn = pastebin.findElement(By.xpath("//*[@id=\"mainForm\"]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[13]/button"));
         wait.until(ExpectedConditions.elementToBeClickable(btn));
         btn.click();
@@ -74,7 +59,6 @@ public class FourthTask {
         wait.until(ExpectedConditions.elementToBeClickable(emailEst));
         emailEst.click();
     }
-
 
     @Test
     public void checkEstimate() throws InterruptedException {
@@ -88,7 +72,6 @@ public class FourthTask {
 
         pastebin.findElement(By.xpath("//input[@type=\"email\"]")).sendKeys(mail_address);
         pastebin.findElement(By.xpath("//*[@id=\"dialogContent_390\"]/form/md-dialog-actions/button[2]")).click();
-
 
         pastebin.switchTo().window(tabs.get(1));
 
@@ -106,7 +89,11 @@ public class FourthTask {
         pastebin.quit();
     }
 
-
+    public static void switchToFrameByName(WebDriver driver, String name){
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame(0);
+        driver.switchTo().frame(name);
+    }
 
 
 }

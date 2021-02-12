@@ -15,7 +15,6 @@ public class Main {
         patients.add(new Patient(8,"Yeltsin", "", "", "" ,"", "4000000","сссс"));
         patients.add(new Patient(9,"Putin", "", "", "" ,"", "5000000","сссс"));
 
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите диагноз: ");
         String diagnose =  scanner.nextLine();
@@ -25,7 +24,6 @@ public class Main {
                 System.out.println(patient.toString());
             }
         }
-
 
         System.out.println("Начало интервала: ");
         long begin = (long)scanner.nextInt();

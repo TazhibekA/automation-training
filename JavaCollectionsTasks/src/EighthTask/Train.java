@@ -7,8 +7,8 @@ public class Train {
     private List<Transport> train;
 
     public Train(List<Transport> train) {
-        this.totalQuantity = TotalQuantity(train);
-        this.totalBaggage = TotalBaggage(train);
+        this.totalQuantity = getTotalQuantity(train);
+        this.totalBaggage = getTotalBaggage(train);
         this.train = train;
     }
 
@@ -36,7 +36,7 @@ public class Train {
         this.train = train;
     }
 
-    private int TotalQuantity(List<Transport> train){
+    private int getTotalQuantity(List<Transport> train){
         int sum = 0;
         for(Transport transport: train){
                 sum += transport.getQuantity();
@@ -44,7 +44,7 @@ public class Train {
         return sum;
     }
 
-    private int TotalBaggage(List<Transport> train){
+    private int getTotalBaggage(List<Transport> train){
         int sum = 0;
         for(Transport transport: train){
             sum += transport.getBaggage();

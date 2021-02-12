@@ -35,7 +35,6 @@ public class Candy implements Comparable<Candy>{
         this.price = price;
     }
 
-
     @Override
     public int compareTo(Candy o) {
         if (this.price > o.price)

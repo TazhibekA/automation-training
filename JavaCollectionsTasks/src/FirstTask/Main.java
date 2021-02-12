@@ -17,7 +17,7 @@ public class Main {
         Bouquet bouquet = new Bouquet(bouquetList);
         Collections.sort(bouquet.getBouquet());
         System.out.println(bouquet.toString());
-        System.out.println(bouquet.FindFlower(25));
+        System.out.println(bouquet.getFlowerByLength(25));
 
     }
 }

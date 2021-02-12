@@ -35,24 +35,17 @@ public class Apartment {
         this.electronicAppliances = electronicAppliances;
     }
 
-    private boolean HasPower(int power){
-        for(ElectronicAppliance electronicAppliance:electronicAppliances){
-            if(electronicAppliance.getPower()==power) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public ElectronicAppliance FindElectronicAppliance(int power){
-        if(this.HasPower(power)){
-            for(ElectronicAppliance electronicAppliance:electronicAppliances){
-                if(electronicAppliance.getPower()==power) {
+    public ElectronicAppliance getElectronicApplianceByPower(int power){
+            for(ElectronicAppliance electronicAppliance:electronicAppliances) {
+                if (electronicAppliance.getPower() == power) {
                     return electronicAppliance;
                 }
             }
-        }
         return null;
+    }
+
+    public boolean isElectronicApplianceWithPowerPresent(int power){
+        return getElectronicApplianceByPower(power) != null;
     }
 
     @Override

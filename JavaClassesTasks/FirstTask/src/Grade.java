@@ -33,24 +33,14 @@ public class Grade {
 
     @Override
     public String toString() {
-        return "\nGrade ID: "  + id + "\nGrade groups:\n "  + groups;
+        return "Grade ID: "  + id + "\nGrade groups:"  + groups + '\n';
     }
 
-
-
-    public List<Student> SaveAllStudents(){
+    public List<Student> getAllStudents(){
         List<Student> students = new ArrayList<Student>();
-        for(int i = 0;i < groups.size();i++){
-            for(int j=0;j< groups.get(i).getStudents().size();j++){
-                    students.add(groups.get(i).getStudents().get(j));
-            }
+        for(Group group :groups){
+          students.addAll(group.getStudents());
         }
-        return students;
+        return  students;
     }
-
-
-
-
-
-
 }

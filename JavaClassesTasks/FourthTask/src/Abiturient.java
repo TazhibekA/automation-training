@@ -85,7 +85,7 @@ public class Abiturient {
         this.marks = marks;
     }
 
-    public boolean GoodMarks(){
+    public boolean isAverageMarkGood(){
         int m = 0;
         for(int i = 0;i < marks.size();i++){
             m = m + marks.get(i);
@@ -94,7 +94,7 @@ public class Abiturient {
         return (m/(marks.size()) < 4) ? false : true;
     }
 
-    public int SumOfMarks(){
+    public int getSumOfMarks(){
         int m = 0;
         for(int i = 0;i < marks.size();i++){
             m = m + marks.get(i);

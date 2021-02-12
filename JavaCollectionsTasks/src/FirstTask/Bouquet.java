@@ -7,7 +7,7 @@ public class Bouquet {
     private List<Flower> bouquet;
 
     public Bouquet(List<Flower> bouquet) {
-        this.totalPrice = TotalPrice(bouquet);
+        this.totalPrice = getTotalPrice(bouquet);
         this.bouquet = bouquet;
     }
 
@@ -19,7 +19,7 @@ public class Bouquet {
         this.bouquet = bouquet;
     }
 
-    private double TotalPrice(List<Flower> bouquet){
+    private double getTotalPrice(List<Flower> bouquet){
         double sum = 0;
         for(Flower flower: bouquet){
             sum += flower.getPrice();
@@ -27,24 +27,17 @@ public class Bouquet {
         return sum;
     }
 
-    private boolean HasFlowerWithLength(int length){
-        for(Flower flower:bouquet){
-            if(flower.getLength()==length) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public Flower FindFlower(int length){
-        if(this.HasFlowerWithLength(length)){
+    public Flower getFlowerByLength(int length){
         for(Flower flower:bouquet){
             if(flower.getLength()==length) {
                 return flower;
             }
         }
-        }
          return null;
+    }
+
+    public boolean isFlowerWithLenghtPresent(int lenght){
+        return getFlowerByLength(lenght) != null;
     }
 
     @Override

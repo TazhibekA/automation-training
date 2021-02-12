@@ -11,7 +11,6 @@ public class SubjectMarks {
                 throw new IllegalMarkException("Illegal mark");}
         }
         this.marks = subjectMarks;
-
     }
 
     public String getSubjectName() {
@@ -42,8 +41,7 @@ public class SubjectMarks {
         return false;
     }
 
-
-    public Double AverageMark() throws SizeException{
+    public Double getAverageMark() throws SizeException{
         Double av = 0.;
         if(!isEmpty()){
             for(Double num: marks){
@@ -53,6 +51,5 @@ public class SubjectMarks {
         }
         else
            throw new SizeException("size = 0");
-
     }
 }

@@ -36,6 +36,5 @@ public class Main {
             if(Long.parseLong(customers.get(i).getCardNumber())>=begin && Long.parseLong(customers.get(i).getCardNumber())<=end)
                 System.out.println(customers.get(i).toString());
         }
-
     }
 }

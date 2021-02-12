@@ -40,6 +40,4 @@ public class ParkingPlace {
             e.printStackTrace();
         }
     }
-
-
 }

@@ -47,32 +47,22 @@ public class Faculty {
 
     @Override
     public String toString() {
-        return "\nFaculty ID: "  + id + "\nFaculty Name: "  + facultyName + "\nFaculty grades:\n "  + grades;
+        return "\nFaculty ID: "  + id + "\nFaculty Name: "  + facultyName + "\nFaculty grades:"  + grades +'\n';
     }
 
-    public List<Student> SaveAllStudents(){
+    public List<Student> getAllStudents(){
         List<Student> students = new ArrayList<Student>();
-        for(int i = 0;i < grades.size();i++){
-            for(int j=0;j< grades.get(i).getGroups().size();j++){
-                for(int k=0; k < grades.get(i).getGroups().get(j).getStudents().size();k++){
-                    students.add(grades.get(i).getGroups().get(j).getStudents().get(k));
-                }
-            }
+        for(Grade grade :grades){
+            students.addAll(grade.getAllStudents());
         }
-        return students;
+        return  students;
     }
 
-    public List<Group> SaveAllGroups(){
-        List<Group> groupList = new ArrayList<Group>();
-        for(int i=0;i<grades.size();i++){
-            for(int j=0;j<grades.get(i).getGroups().size();j++ )
-            groupList.add(grades.get(i).getGroups().get(j));
+    public List<Group> getAllGroups(){
+        List<Group> groups = new ArrayList<Group>();
+        for(Grade grade :grades){
+            groups.addAll(grade.getGroups());
         }
-        return groupList;
+        return groups;
     }
-
-
-
-
-
 }

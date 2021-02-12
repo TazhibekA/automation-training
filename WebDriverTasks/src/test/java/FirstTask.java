@@ -4,10 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-
-import javax.swing.*;
-import java.awt.*;
 
 public class FirstTask {
     public static void main(String[] args) {
@@ -30,8 +26,6 @@ public class FirstTask {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-
         pastebin.quit();
     }
 }

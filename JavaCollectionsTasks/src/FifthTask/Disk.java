@@ -9,13 +9,11 @@ public class Disk {
     private List<Track> tracks;
 
     public Disk(List<Track> tracks) {
-        this.totalDuration = TotalDuration(tracks);
+        this.totalDuration = getTotalDuration(tracks);
         this.tracks = tracks;
     }
 
-
-
-    private double TotalDuration(List<Track> tracks){
+    private double getTotalDuration(List<Track> tracks){
         double sum = 0;
         for(Track track :tracks){
             sum+=track.getDuration();
@@ -23,24 +21,17 @@ public class Disk {
         return sum;
     }
 
-    private boolean HasDuration(int duration){
-        for(Track track:tracks){
-            if(track.getDuration()==duration) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public Track FindDuration(int duration){
-        if(this.HasDuration(duration)){
+    public Track getTrackByDuration(int duration){
             for(Track track:tracks){
                 if(track.getDuration()==duration) {
                     return track;
                 }
             }
-        }
         return null;
+    }
+
+    public boolean isTrackWithDurationPresent(int duration){
+        return getTrackByDuration(duration) != null;
     }
 
     public double getTotalDuration() {

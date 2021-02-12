@@ -1,6 +1,5 @@
+
 public class IllegalMarkException extends Exception{
-
-
     public IllegalMarkException(String message) {
         super(message);
     }
@@ -16,6 +15,4 @@ public class IllegalMarkException extends Exception{
     public IllegalMarkException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
-
-
 }

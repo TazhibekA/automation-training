@@ -14,7 +14,7 @@ public class Main {
         abiturients.add(new Abiturient(9,"Putin", "", "", "" , "5000000", Arrays.asList(4, 5, 4)));
 
         for(Abiturient abiturient : abiturients){
-            if(abiturient.GoodMarks()){
+            if(abiturient.isAverageMarkGood()){
             System.out.println(abiturient.toString());
             }
         }
@@ -27,7 +27,7 @@ public class Main {
         int number = scan.nextInt();
 
         for(Abiturient abiturient : abiturients){
-            if(abiturient.SumOfMarks() >= number){
+            if(abiturient.getSumOfMarks() >= number){
                 System.out.println(abiturient.toString());
             }
         }
@@ -43,7 +43,7 @@ public class Main {
             int max = 0;
             for (int i = 0; i < abiturients.size(); i++) {
                 for (int j = 0; j < abiturients.size(); j++) {
-                    if (abiturients.get(max).SumOfMarks() > abiturients.get(j).SumOfMarks()) {
+                    if (abiturients.get(max).getSumOfMarks() > abiturients.get(j).getSumOfMarks()) {
                         max = j;
                     }
                 }
@@ -54,21 +54,7 @@ public class Main {
             for(Abiturient abiturient : abiturients){
                     System.out.println(abiturient.toString());
             }
-
-
         }
-
     }
-
-
-
-
-
-
-        
-        
-        
-
-
 }
 

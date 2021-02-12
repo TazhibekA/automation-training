@@ -15,6 +15,6 @@ public class Main {
         Disk disk = new Disk(trackList);
         Collections.sort(disk.getTracks());
         System.out.println(disk.toString());
-        System.out.println(disk.FindDuration(250));
+        System.out.println(disk.getTrackByDuration(250));
     }
 }

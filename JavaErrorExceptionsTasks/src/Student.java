@@ -12,7 +12,6 @@ public class Student {
             throw new SizeException("size = 0");
     }
 
-
     public String getName() {
         return name;
     }
@@ -36,11 +35,9 @@ public class Student {
         return false;
     }
 
-
-    public Double AverageMark() throws SizeException{
+    public Double getAverageMark(){
         Double num = 0.;
         int size = 0;
-
             for (SubjectMarks subject : subjectMarks) {
                 size += subject.getMarks().size();
                 for (Double mark : subject.getMarks()) {
@@ -48,15 +45,11 @@ public class Student {
                 }
             }
             return num / size;
-
-
-
     }
 
-    public Double AverageMark(String subjectName) throws SizeException{
+    public Double getAverageMarkBySubject(String subjectName){
         Double num = 0.;
         int size = 0;
-
             for (SubjectMarks subject : subjectMarks) {
                 if(subject.getSubjectName().equals(subjectName)) {
                     size += subject.getMarks().size();
@@ -66,8 +59,6 @@ public class Student {
                 }
             }
             return num / size;
-
     }
-
 
 }

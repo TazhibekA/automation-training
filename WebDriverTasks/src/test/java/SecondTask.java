@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,7 +23,6 @@ public class SecondTask {
         firstElement.sendKeys("git config --global user.name  \"New Sheriff in Town\"\n" +
                 "git reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\n" +
                 "git push origin master --force");
-
 
         WebElement secondElement = pastebin.findElement(By.xpath("//*[@id=\"postform-name\"]"));
         secondElement.sendKeys("how to gain dominance among developers");
@@ -50,7 +48,6 @@ public class SecondTask {
     @Test
     public void rightSyntaxHighlighting(){
         String textOfSyntaxHighlighting="Bash";
-        //System.out.println(pastebin.findElement(By.linkText("Bash")).getText());
         Assert.assertEquals(pastebin.findElement(By.linkText("Bash")).getText(),textOfSyntaxHighlighting);
     }
 

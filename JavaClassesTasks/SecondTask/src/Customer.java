@@ -95,6 +95,4 @@ public class Customer {
                 ", shetNumber='" + shetNumber + '\'' +
                 '}';
     }
-
-
 }

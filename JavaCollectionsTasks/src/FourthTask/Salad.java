@@ -6,11 +6,11 @@ public class Salad {
     private List<Vegetable> vegetables;
 
     public Salad(List<Vegetable> vegetables) {
-        this.totalCalories = TotalCalories(vegetables);
+        this.totalCalories = getTotalCalories(vegetables);
         this.vegetables = vegetables;
     }
 
-    private double TotalCalories(List<Vegetable> vegetables){
+    private double getTotalCalories(List<Vegetable> vegetables){
         double sum = 0;
         for(Vegetable vegetable: vegetables){
                 sum += vegetable.getCalories();
@@ -18,24 +18,17 @@ public class Salad {
         return sum;
     }
 
-    private boolean HasVegetableCalories(int calories){
-        for(Vegetable vegetable:vegetables){
-            if(vegetable.getCalories()==calories) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public Vegetable FindVegetable(int calories){
-        if(this.HasVegetableCalories(calories)){
+    public Vegetable getVegetableByCalories(int calories){
             for(Vegetable vegetable:vegetables){
                 if(vegetable.getCalories()==calories) {
                     return vegetable;
                 }
             }
-        }
         return null;
+    }
+
+    public boolean isVegetableWithCaloriesPresent(int calories){
+        return getVegetableByCalories(calories) != null;
     }
 
     public List<Vegetable> getVegetables() {

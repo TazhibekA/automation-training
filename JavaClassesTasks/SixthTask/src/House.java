@@ -19,7 +19,6 @@ public class House {
         this.lifeTime = "";
     }
 
-
     public House(int id, int numberApart, int space, int floor, int countOfRooms, String street, String typeBuild, String lifeTime) {
         this.id = id;
         this.numberApart = numberApart;
